@@ -3,7 +3,6 @@ package invaderScore;
 import java.awt.BorderLayout;
 
 
-import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JPanel;
@@ -33,7 +32,7 @@ public class InvaderScorePanel extends ViewPanel implements GameObserver
 	private String invaderScore;
 
 
-	public InvaderScorePanel(int width, int height, ActionListener listener)
+	public InvaderScorePanel(GameInfoProvider gameInfo)
 	{
 		JPanel scorePanel = new JPanel();
 		add(scorePanel,BorderLayout.CENTER);
