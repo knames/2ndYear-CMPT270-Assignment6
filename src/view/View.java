@@ -1,7 +1,5 @@
 package view;
 
-import invaderScore.InvaderScoreFrame;
-import invaderScore.InvaderScorePanel;
 
 import java.awt.Component;
 import java.awt.Container;
@@ -24,10 +22,6 @@ public class View extends JFrame
 	public static final int BORDER_WIDTH = 6;
 	
 
-	/**
-	 * The object that provides information about the game.
-	 */
-	private GameInfoProvider gameInfo;
 	
 	
 	/*
@@ -82,16 +76,6 @@ public class View extends JFrame
 		displayPanel(panel);
 	}
 	
-	/** Construct InvaderSCore view, make it visible
-	 * @param actionListener  listens for anything that will increase the Invader score*/
-	public void showInvaderScoreView(ActionListener actionListener)
-	{
-		InvaderScoreFrame frame = new InvaderScoreFrame(gameInfo);
-		//InvaderScorePanel panel = new InvaderScorePanel(gameInfo);
-		//frame.add(panel);
-		//displayPanel(panel);
-		//gameInfo.addObserver(frame);
-	}
 
 	/**
 	 * Construct a view showing high scores from past plays of the game, 

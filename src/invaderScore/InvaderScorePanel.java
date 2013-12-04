@@ -30,16 +30,20 @@ public class InvaderScorePanel extends ViewPanel implements GameObserver
 	
 	/** The printout of Invaders and their Scores*/
 	private String invaderScore;
+	
+	/** A JTextArea to hold my scores. */
+	private JTextArea scoreArea;
 
 
 	public InvaderScorePanel(GameInfoProvider gameInfo)
 	{
 		JPanel scorePanel = new JPanel();
 		add(scorePanel,BorderLayout.CENTER);
-		JTextArea scoreArea = new JTextArea(invaderScore,42,35);
+		scoreArea = new JTextArea(invaderScore,42,35);
 		scoreArea.setLineWrap(true);
 		JScrollPane scrollPane = new JScrollPane(scoreArea);
 		scorePanel.add(scrollPane);
+		this.gameInfo = gameInfo;
 		//gameInfo.addObserver(scorePanel);
 	}
 

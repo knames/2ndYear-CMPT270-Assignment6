@@ -1,5 +1,7 @@
 package control;
 
+import invaderScore.InvaderScoreFrame;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -75,8 +77,9 @@ public class Controller implements KeyListener, ActionListener, GameObserver
 			gameControl = game;
 			gameInfo = game;
 			gameInfo.addObserver(this);  // this is passed in as a GameObserver
+			@SuppressWarnings("unused")
+			InvaderScoreFrame frame = new InvaderScoreFrame(gameInfo);
 			view.showNewGameView(gameInfo, this); // this is passed in as a KeyListener
-			score.showInvaderScoreView(this);
 			gameControl.start();
 		}
 		else if (actionCommand.equals("savescore"))

@@ -2,18 +2,16 @@ package invaderScore;
 
 
 import java.awt.Color;
-import java.awt.Component;
+
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+
 
 import model.GameInfoProvider;
 
 import java.awt.BorderLayout;
 
 
-import java.awt.event.ActionListener;
 import java.util.List;
 
 import model.GameObserver;
@@ -36,6 +34,7 @@ public class InvaderScoreFrame extends JFrame implements GameObserver
 	private GameInfoProvider gameInfo;
 	
 	/** The printout of Invaders and their Scores*/
+	@SuppressWarnings("unused")
 	private String invaderScore;
 	
 	
