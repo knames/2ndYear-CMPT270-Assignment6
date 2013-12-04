@@ -39,7 +39,7 @@ public class Game implements GameControl, GameInfoProvider
 	protected Laser laser;
 	
 	/** The list of the invaders.  */
-	protected List<Invader> invadersList;
+	protected List<InvaderScore> invadersList;
 	
 	/** The list of the blocks.  */
 	protected List<Block> blocksList;
@@ -71,7 +71,7 @@ public class Game implements GameControl, GameInfoProvider
 		this.width = width;
 		this.height = height;
 
-		invadersList = new LinkedList<Invader>();
+		invadersList = new LinkedList<InvaderScore>();
 		blocksList = new LinkedList<Block>();
 		missilesList = new LinkedList<Missile>();
 		observers = new LinkedList<GameObserver>();
@@ -164,7 +164,7 @@ public class Game implements GameControl, GameInfoProvider
 				int x = (j + 1) * (Invader.WIDTH + INVADER_X_SPACING);
 				int y = (i + 1) * (Invader.HEIGHT + INVADER_Y_SPACING);
 				int killWorth = MAX_KILL_WORTH - (i * KILL_WORTH_ROW_DECREMENT);
-				Invader invader = new Invader(x, y, killWorth, level, this);
+				InvaderScore invader = new InvaderScore(x, y, killWorth, level, this);
 				invadersList.add(invader);
 			}
 		}
@@ -258,7 +258,7 @@ public class Game implements GameControl, GameInfoProvider
 
 		synchronized(invaderSynchronizationObject)
 		{
-			Iterator<Invader> invaderIterator = invadersList.iterator();
+			Iterator<InvaderScore> invaderIterator = invadersList.iterator();
 			while (invaderIterator.hasNext())
 			{
 				Invader invader = invaderIterator.next();
@@ -297,7 +297,7 @@ public class Game implements GameControl, GameInfoProvider
 
 		// determine the position for an invader to cross the level of the player
 		int pos = player.getY() - Invader.HEIGHT; 
-		Iterator<Invader> iterator = invadersList.iterator();
+		Iterator<InvaderScore> iterator = invadersList.iterator();
 		while (iterator.hasNext())
 		{
 			if (iterator.next().getY() > pos)
@@ -462,5 +462,10 @@ public class Game implements GameControl, GameInfoProvider
 	public int getTick()
 	{
 		return tick;
+	}
+
+	/* @return score of invader*/
+	public List<InvaderScore> getInvaderScore() {
+		return invadersList;
 	}	
 }

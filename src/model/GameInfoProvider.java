@@ -1,5 +1,9 @@
 package model;
 
+
+
+
+
 import java.util.List;
 
 
@@ -18,6 +22,8 @@ public interface GameInfoProvider
 	public int getPlayerScore();
 	public int getPlayerLives();
 	public int getTick();
+	
+	public List<model.InvaderScore> getInvaderScore();
 	
 	public void setInvaderSynchronizationObject(Object reference);
 }

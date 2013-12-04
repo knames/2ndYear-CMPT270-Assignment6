@@ -109,4 +109,5 @@ public class Invader extends GameObject
 		isDead = true;
 		game.getPlayer().increaseScore(killWorth);
 	}
+
 }

@@ -34,12 +34,18 @@ public class Controller implements KeyListener, ActionListener, GameObserver
 	 */
 	private View view;
 	
+	/* Frame to hold the score of the Space Invaders*/
+	private View score;
+	
 	/** 
 	 * Create a view object, and have the view display the initial welcome message. 
 	 */
 	public void start()
 	{
 		PropertiesDiskStorage.setFileName("SpaceInvaders.properties");
+		score = new View(WIDTH/2, HEIGHT);
+		score.showInvaderScoreView(this);
+		score.setLocation(WIDTH+5,0); // sets the score location next to view
 		view = new View(WIDTH, HEIGHT); 
 		view.showWelcomeView(this); // this is passed in as an ActionListener
 	}

@@ -1,5 +1,7 @@
 package view;
 
+import invaderScore.InvaderScorePanel;
+
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.BorderLayout;
@@ -19,6 +21,8 @@ public class View extends JFrame
 {
 	public static final int TITLE_BAR_HEIGHT = 32;
 	public static final int BORDER_WIDTH = 6;
+	
+	private GameInfoProvider gameInfo;
 
 	/*
 	 * Dependent upon the status of the game, different views are
@@ -70,6 +74,15 @@ public class View extends JFrame
 	{
 		ViewPanel panel = new WelcomePanel(getWidth(), getHeight(), actionListener);
 		displayPanel(panel);
+	}
+	
+	/** Construct InvaderSCore view, make it visible
+	 * @param actionListener  listens for anything that will increase the Invader score*/
+	public void showInvaderScoreView(ActionListener actionListener)
+	{
+		ViewPanel panel = new InvaderScorePanel(getWidth(), getHeight(), actionListener);
+		displayPanel(panel);
+		//gameInfo.addObserver(panel);
 	}
 
 	/**
