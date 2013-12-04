@@ -60,6 +60,7 @@ public class InvaderScorePanel extends ViewPanel implements GameObserver
 		scoreArea.setLineWrap(true);
 		JScrollPane scrollPane = new JScrollPane(scoreArea);
 		scorePanel.add(scrollPane);
+		gameInfo.addObserver(this);
 	}
 
 	@Override

@@ -22,8 +22,13 @@ public class View extends JFrame
 	public static final int TITLE_BAR_HEIGHT = 32;
 	public static final int BORDER_WIDTH = 6;
 	
-	private GameInfoProvider gameInfo;
 
+	/**
+	 * The object that provides information about the game.
+	 */
+	//private GameInfoProvider gameInfo;
+	
+	
 	/*
 	 * Dependent upon the status of the game, different views are
 	 * displayed in the frame to show what is going on in the game.
@@ -80,7 +85,7 @@ public class View extends JFrame
 	 * @param actionListener  listens for anything that will increase the Invader score*/
 	public void showInvaderScoreView(ActionListener actionListener)
 	{
-		ViewPanel panel = new InvaderScorePanel(getWidth(), getHeight(), actionListener);
+		InvaderScorePanel panel = new InvaderScorePanel(getWidth(), getHeight(), actionListener);
 		displayPanel(panel);
 		//gameInfo.addObserver(panel);
 	}
