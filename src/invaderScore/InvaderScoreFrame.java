@@ -47,15 +47,10 @@ public class InvaderScoreFrame extends JFrame implements GameObserver
 	setLayout(new BorderLayout());
 	this.gameInfo = gameInfo;
 	
-	JPanel panel = new JPanel();
-	panel.setLayout(new BorderLayout());
 	
-	JLabel titleLabel = new JLabel("Invader Score");
-	titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-	add(titleLabel);
 	InvaderScorePanel scorePanel = new InvaderScorePanel(gameInfo);
 	this.add(scorePanel);
-	//gameInfo.addObserver(scorePanel);
+	gameInfo.addObserver(scorePanel);
 	this.setVisible(true);
 	}
 	public static final long serialVersionUID = 1;

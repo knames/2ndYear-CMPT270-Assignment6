@@ -87,8 +87,8 @@ public class View extends JFrame
 	public void showInvaderScoreView(ActionListener actionListener)
 	{
 		InvaderScoreFrame frame = new InvaderScoreFrame(gameInfo);
-		InvaderScorePanel panel = new InvaderScorePanel(gameInfo);
-		frame.add(panel);
+		//InvaderScorePanel panel = new InvaderScorePanel(gameInfo);
+		//frame.add(panel);
 		//displayPanel(panel);
 		//gameInfo.addObserver(frame);
 	}

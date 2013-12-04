@@ -44,7 +44,7 @@ public class Controller implements KeyListener, ActionListener, GameObserver
 	{
 		PropertiesDiskStorage.setFileName("SpaceInvaders.properties");
 		score = new View(WIDTH/2, HEIGHT);
-		score.showInvaderScoreView(this);
+		//score.showInvaderScoreView(this);
 		score.setLocation(WIDTH+5,0); // sets the score location next to view
 		view = new View(WIDTH, HEIGHT); 
 		view.showWelcomeView(this); // this is passed in as an ActionListener
@@ -76,6 +76,7 @@ public class Controller implements KeyListener, ActionListener, GameObserver
 			gameInfo = game;
 			gameInfo.addObserver(this);  // this is passed in as a GameObserver
 			view.showNewGameView(gameInfo, this); // this is passed in as a KeyListener
+			score.showInvaderScoreView(this);
 			gameControl.start();
 		}
 		else if (actionCommand.equals("savescore"))
