@@ -1,19 +1,11 @@
 package invaderScore;
 
-
 import java.awt.Color;
-
-
 import javax.swing.JFrame;
 
-
 import model.GameInfoProvider;
-
 import java.awt.BorderLayout;
-
-
 import java.util.List;
-
 import model.GameObserver;
 
 
@@ -40,6 +32,7 @@ public class InvaderScoreFrame extends JFrame implements GameObserver
 	
 	public InvaderScoreFrame(GameInfoProvider gameInfo)
 	{
+	setFocusableWindowState(false);
 	setSize(400, 672);
 	setLocation(805,0);
 	setBackground(Color.BLACK);
@@ -49,8 +42,11 @@ public class InvaderScoreFrame extends JFrame implements GameObserver
 	
 	InvaderScorePanel scorePanel = new InvaderScorePanel(gameInfo);
 	this.add(scorePanel);
-	gameInfo.addObserver(scorePanel);
 	this.setVisible(true);
+	gameInfo.addObserver(scorePanel);
+	
+
+	
 	}
 	public static final long serialVersionUID = 1;
 
@@ -60,6 +56,7 @@ public class InvaderScoreFrame extends JFrame implements GameObserver
 		List<model.InvaderScore> invaderList;
 		invaderList = gameInfo.getInvaderScore();
 		invaderScore = invaderList.toString();
+		
 		
 	}
 }

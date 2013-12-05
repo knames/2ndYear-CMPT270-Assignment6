@@ -16,8 +16,8 @@ Everything is working.
 
 Changes made to given classes:
 - Added score field to Controller
+- Added line in Controller to create InvaderScoreFrame
 - Added line of code to show the score view.
-- Added showInvaderScoreView function to View
 - Added getInvaderScore function to GameInfoProvider
 - Added getInvaderScore() to Game.java
 - Changed invadersList to new InvaderScore type

@@ -164,7 +164,7 @@ public class Game implements GameControl, GameInfoProvider
 				int x = (j + 1) * (Invader.WIDTH + INVADER_X_SPACING);
 				int y = (i + 1) * (Invader.HEIGHT + INVADER_Y_SPACING);
 				int killWorth = MAX_KILL_WORTH - (i * KILL_WORTH_ROW_DECREMENT);
-				InvaderScore invader = new InvaderScore(x, y, killWorth, level, this);
+				InvaderScore invader = new InvaderScore(x, y, killWorth, level, this, i, j); 
 				invadersList.add(invader);
 			}
 		}

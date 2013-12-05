@@ -1,6 +1,8 @@
 package view;
 
 
+
+
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.BorderLayout;
@@ -130,6 +132,8 @@ public class View extends JFrame
 		// so that it can show the new situation
 		gameInfoProvider.addObserver(gamePanel);
 		overallPanel.setFocusComponent(gamePanel);
+		
+		
 		
 		displayPanel(overallPanel);
 	}

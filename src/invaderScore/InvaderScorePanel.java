@@ -3,6 +3,7 @@ package invaderScore;
 import java.awt.BorderLayout;
 
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.swing.JPanel;
@@ -39,12 +40,11 @@ public class InvaderScorePanel extends ViewPanel implements GameObserver
 	{
 		JPanel scorePanel = new JPanel();
 		add(scorePanel,BorderLayout.CENTER);
-		scoreArea = new JTextArea(invaderScore,42,35);
+		scoreArea = new JTextArea(invaderScore,40,30);
 		scoreArea.setLineWrap(true);
 		JScrollPane scrollPane = new JScrollPane(scoreArea);
 		scorePanel.add(scrollPane);
 		this.gameInfo = gameInfo;
-		//gameInfo.addObserver(scorePanel);
 	}
 
 	@Override
@@ -52,7 +52,10 @@ public class InvaderScorePanel extends ViewPanel implements GameObserver
 	{
 		List<model.InvaderScore> invaderList;
 		invaderList = gameInfo.getInvaderScore();
-		invaderScore = invaderList.toString();
+		Collections.sort(invaderList);
+		invaderScore = "Invader(Row,Column):Score\n";
+		invaderScore = invaderScore + invaderList.toString();
+		scoreArea.setText(invaderScore);
 	}
 	
 
