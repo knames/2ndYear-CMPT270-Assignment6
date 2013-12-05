@@ -23,3 +23,7 @@ Changes made to given classes:
 - Added getInvaderScore() to Game.java
 - Changed invadersList to new InvaderScore type.
 
+
+
+
+
