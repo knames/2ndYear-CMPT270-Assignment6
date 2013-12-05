@@ -13,12 +13,13 @@ From there, you can run the program java -jar
 Status:
 Everything is working. 
 
+See Assignment6UML.pdf for UML diagram.
+
 
 Changes made to given classes:
-- Added score field to Controller
-- Added line in Controller to create InvaderScoreFrame
-- Added line of code to show the score view.
-- Added getInvaderScore function to GameInfoProvider
+- Added score field to Controller.java
+- Added line in Controller.java to create InvaderScoreFrame
+- Added getInvaderScore function to GameInfoProvider.java
 - Added getInvaderScore() to Game.java
-- Changed invadersList to new InvaderScore type
+- Changed invadersList to new InvaderScore type.
 

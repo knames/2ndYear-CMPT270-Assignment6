@@ -5,8 +5,7 @@ import javax.swing.JFrame;
 
 import model.GameInfoProvider;
 import java.awt.BorderLayout;
-import java.util.List;
-import model.GameObserver;
+
 
 
 
@@ -18,11 +17,12 @@ import model.GameObserver;
  * @param listener	the class listening for the event 
  *                	that signals the button was pressed
  */
-public class InvaderScoreFrame extends JFrame implements GameObserver
+public class InvaderScoreFrame extends JFrame 
 {
 	/**
 	 * The object that provides information about the game.
 	 */
+	@SuppressWarnings("unused")
 	private GameInfoProvider gameInfo;
 	
 	/** The printout of Invaders and their Scores*/
@@ -51,12 +51,5 @@ public class InvaderScoreFrame extends JFrame implements GameObserver
 	public static final long serialVersionUID = 1;
 
 
-	@Override
-	public void gameChanged() {
-		List<model.InvaderScore> invaderList;
-		invaderList = gameInfo.getInvaderScore();
-		invaderScore = invaderList.toString();
-		
-		
-	}
+
 }
